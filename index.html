@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+                    <!--lien css bootstrap-->
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+                    <!--google font-->
+                <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+              <!--lien font awesomme-->
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--------------------------editeur-->
+     
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+  
+
+</head>
+<body>
+    <section class="bg-dark ">
+  <nav class="navbar navbar-expand-lg navbar-light text-white">
+    <div class="container">
+      <a class="navbar-brand text-white" href="admin.html">AdminBoard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-white" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="index.html">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <button class="bg-dark text-white  border-0"  id="Ajouter un post" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <a class="nav-link active text-white " aria-current="page" href="#index.html/#exampleModal" aria-labelledby="exampleModalLabel" >Posts</a>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="bg-dark border-0 text-white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <a class="nav-link text-white  " href="#">Categorie</a>
+          </button>
+          </li>
+          <li class="nav-item"> 
+            <button class="bg-dark text-white  border-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+            <a class="nav-link text-white" href="#">Utilisateur</a>
+          </button>
+          </li>
+        </ul>
+        <div class="nav-item dropdown d-flex px-5">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user"></i>Bienvenue IMMS
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="profil.html"><i class="fas fa-user-circle"></i>Profile</a>
+            <a class="dropdown-item" href="parametre.html"><i class="fas fa-cog"></i>Parametres</a>
+            <hr class="dropdown-divider">
+          </div>
+              <div class="nav-item"> 
+            
+              <a  class="nav-link disabled text-white" href="admin.html"> <i class="fas fa-user-times pr-1 "></i>Logout</a>
+            
+              </div>
+
+        </div>
+
+      </div>
+    </div>
+  </nav>                    
+</section>
+
+   <!-----------------------------------Dashbord-->
+   <section class="bg-primary">
+       <div class="container">
+           <div class="row pt-5 pb-5">
+            
+            <i class="fas fa-cog fa-3x text-white"> <span>Dash board</span></i>
+           </div>
+       </div>
+   </section>
+   <!---------------------------les post-->
+   <section class=" ">
+       <div class="container">
+                <div class="row pt-2 pb-2">
+                        <div class="col-sm-12 col-md-4 ">
+                          <!------modal -->
+                          <!-- Button trigger modal -->
+                              <button type="button" class="btn btn-primary   w-100 text-white pt-2 pb-2" id="Ajouter un post" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <i class="fa-solid fa-plus fa-1x"></i> Ajouter un post
+                              </button>
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header  bg-primary">
+                                        <h5 class="modal-title" id="exampleModalLabel">Ajouter un Post</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                          <label for="">Titre</label><br>
+                                        <input type="text" name="" id="" class="w-100 pb-2"><br><br>
+
+                                        <div class="input-group mb-3">
+                                          
+                                          <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                            <option selected>Category</option>
+                                            <option value="1">Web Developpement</option>
+                                            <option value="2">Tech Gadget</option>
+                                            <option value="3">Business</option>
+                                            <option value="4">Heath & Weliness</option>
+                                          </select>
+                                        </div>
+                                        <h5>Image Upload</h5>
+                                        <!-----------------file-->
+                                        <div class="input-group">
+                                    
+                                          <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"><br><br>
+                                          
+                                        </div>
+                                        <p>Max Size 3mb</p>
+                                        <h5>Body</h5>
+
+                                        <!----------------------------editeur-->
+
+                                        <textarea>
+                                          Welcome to TinyMCE!
+                                        </textarea>
+                                        <script>
+                                          tinymce.init({
+                                            selector: 'textarea',
+                                            plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+                                            toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table',
+                                            toolbar_mode: 'floating',
+                                            tinycomments_mode: 'embedded',
+                                            tinycomments_author: 'Author name',
+                                          });
+                                        </script>
+
+
+                                        <!------------------------------Fin editeur-->
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                        </div>  
+                            <!---------fin modal-->
+                       
+  
+                        <div class="col-sm-12 col-md-4 "> 
+                                            <!-----------------ajouter une categorie-->
+                                            <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-success w-100 pt-2 pb-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                          <i class="fa-solid fa-plus fa-1x"></i> Ajouter une Categorie
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                            <div class="modal-content">
+                                              <div class="modal-header  bg-success">
+                                                <h5 class="modal-title" id="staticBackdropLabel"> Ajouter une Categorie</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                              </div>
+                                              <div class="modal-body">
+                                                <label for="">Titre</label><br>
+                                                <input type="text" class="w-100">
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-success">Save Changes</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                          <!----------------------------fin categorie-->
+                        </div>
+                        <!---------------------Ajouter un utilisateur-->
+                        <div class="col-md-4 col-sm-12"> 
+
+                                                  <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-warning text-white  w-100 pt-2 pb-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                                              <i class="fa-solid fa-plus fa-1x"></i>Ajouter un utilisateur
+
+                                            </button>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                              <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                  <div class="modal-header  bg-warning">
+                                                    <h5 class="modal-title" id="staticBackdropLabel">Ajouter un utilisateur</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                  <label for="">Name</label><br>
+                                                  <input type="text" class="w-100">
+                                                  <label for="">Email</label><br>
+                                                  <input type="email" name="" id="" class="w-100">
+                                                  <label for="">Password</label><br>
+                                                  <input type="password" class="w-100">
+                                                  <label for="">Confirme Password</label><br>
+                                                  <input type="text" class="w-100">
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-warning">Save change</button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                         </div>
+                  <!--------------------- fin Ajouter un utilisateur-->
+                </div>
+       </div>   
+      </section>       
+                <!---------------fin section 1-->
+      <section class="">
+        <div class="container">
+          <div class="row ">
+            <div class="col-lg-8 col-sm-6 ">
+                <p class="bg-light">Les posts recents</p>
+                <table class="table pt-2 pb-5 h-75">
+                              <thead class="bg-dark  text-white">
+                                <tr>
+                                    <th>#</th>
+                                  <th scope="col">Titre</th>
+                                  <th scope="col">Catregorie</th>
+                                  <th scope="col">Date du Poste</th>
+                                  <th scope="col"></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="bg-light">
+                                  <th scope="row">1</th>
+                                  <td>Poste One</td>
+                                  <td>Web Developpment</td>
+                                  <td>Octobre 12,2019</td>
+                                  <td>
+                                    <!-------------------------button post-->
+                           <div class="modal fade w-100" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                            <div class="modal-dialog modal-centered">
+                              <div class="modal-content">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <div class="bg-primary">
+                                  <p>Post One</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="modal-footer ">
+                                       
+                                        <button type="button" class="btn btn-success "><i class="fa-solid fa-check"></i>Save changes</button>
+                                        <button type="button" class="btn btn-danger " data-bs-dismiss="modal"><i class="fa-solid fa-user-xmark"></i>Close</button>
+                                      </div>                               
+                                </div>
+                                <div class="modal-header  bg-secondary">
+                                  <h5 class="modal-title" id="exampleModalToggleLabel">Edit Post</h5>
+                                  
+                                </div>
+                                <div class="modal-body">
+                                    <div class="modal-body">
+                                        <label for="">Titre</label><br>
+                                      <input type="text" name="" id="" class="w-100 pb-2"><br><br>
+                            
+                                      <div class="input-group mb-3">
+                                        
+                                        <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                          <option selected>Category</option>
+                                          <option value="1">Web Developpement</option>
+                                          <option value="2">Tech Gadget</option>
+                                          <option value="3">Business</option>
+                                          <option value="4">Heath & Weliness</option>
+                                        </select>
+                                      </div>
+                                      <h5>Image Upload</h5>
+                                      <!-----------------file-->
+                                      <div class="input-group">
+                                   
+                                        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"><br><br>
+                                        
+                                      </div>
+                                      <p>Max Size 3mb</p>
+                                      <h5>Body</h5>
+                            
+                                      <!----------------------------editeur-->
+                                      <textarea>Next, use our Get Started docs to setup Tiny!</textarea>
+                                    </div>                <!-- Modal -->
+
+                                </div>
+                              
+                              </div>
+                            </div>
+                          </div>
+                          <a class="btn btn-secondary" data-bs-toggle="modal" href="#exampleModalToggle" role="button"><i class="fa-solid fa-angles-right"></i> Details</a>
+                            
+                           <!-------------------------Fin button post-->  
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Post Two</td>
+                        <td>Tech Gadgets</td>
+                        <td>Octobre 14,2019</td>
+                        <td>
+                           <!-------------------------button post-->
+                          <div class="modal fade" id="exampleModalToggle1" aria-hidden="true" aria-labelledby="exampleModalToggleLabel1" tabindex="-1">
+                            <div class="modal-dialog modal-centered">
+                              <div class="modal-content">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <div class="bg-primary">
+                                  <p>Post Two</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="modal-footer ">
+                                        
+                                        <button type="button" class="btn btn-success "><i class="fa-solid fa-check"></i>Save changes</button>
+                                        <button type="button" class="btn btn-danger " data-bs-dismiss="modal"><i class="fa-solid fa-user-xmark"></i>Close</button>
+                                      </div>                               
+                                </div>
+                                <div class="modal-header  bg-secondary">
+                                  <h5 class="modal-title" id="exampleModalToggleLabel1">Edit Post</h5>
+                                  
+                                </div>
+                                <div class="modal-body">
+                                    <div class="modal-body">
+                                        <label for="">Titre</label><br>
+                                      <input type="text" name="" id="" class="w-100 pb-2"><br><br>
+                            
+                                      <div class="input-group mb-3">
+                                        
+                                        <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                          <option selected>Category</option>
+                                          <option value="1">Web Developpement</option>
+                                          <option value="2">Tech Gadget</option>
+                                          <option value="3">Business</option>
+                                          <option value="4">Heath & Weliness</option>
+                                        </select>
+                                      </div>
+                                      <h5>Image Upload</h5>
+                                      <!-----------------file-->
+                                      <div class="input-group">
+                                   
+                                        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"><br><br>
+                                        
+                                      </div>
+                                      <p>Max Size 3mb</p>
+                                      <h5>Body</h5>
+                            
+                                      <!----------------------------editeur-->
+                                      <textarea>Next, use our Get Started docs to setup Tiny!</textarea>
+                                    </div>                <!-- Modal -->
+
+                                </div>
+                              
+                              </div>
+                            </div>
+                          </div>
+                          </i><a class="btn btn-secondary" data-bs-toggle="modal" href="#exampleModalToggle1" role="button"><i class="fa-solid fa-angles-right"></i> Details</a>
+                            
+                           <!-------------------------Fin button post-->  
+
+                        </td>
+
+                      </tr>
+                      <tr class="bg-light">
+                        <th scope="row">3</th>
+                        <td>Post Three</td>
+                        <td>Web Development</td>
+                        <td>Octobre 14,2019</td>
+                        <td>
+                           <!-------------------------button post-->
+                          <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                            <div class="modal-dialog modal-centered">
+                              <div class="modal-content">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <div class="bg-primary">
+                                  <p>Post Three</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="modal-footer ">
+                                        
+                                        <button type="button" class="btn btn-success "><i class="fa-solid fa-check"></i>Save changes</button>
+                                        <button type="button" class="btn btn-danger " data-bs-dismiss="modal"><i class="fa-solid fa-user-xmark"></i>Close</button>
+                                      </div>                               
+                                </div>
+                                <div class="modal-header  bg-secondary">
+                                  <h5 class="modal-title" id="exampleModalToggleLabel2">Edit Post</h5>
+                                  
+                                </div>
+                                <div class="modal-body">
+                                    <div class="modal-body">
+                                        <label for="">Titre</label><br>
+                                      <input type="text" name="" id="" class="w-100 pb-2"><br><br>
+                            
+                                      <div class="input-group mb-3">
+                                        
+                                        <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                          <option selected>Category</option>
+                                          <option value="1">Web Developpement</option>
+                                          <option value="2">Tech Gadget</option>
+                                          <option value="3">Business</option>
+                                          <option value="4">Heath & Weliness</option>
+                                        </select>
+                                      </div>
+                                      <h5>Image Upload</h5>
+                                      <!-----------------file-->
+                                      <div class="input-group">
+                                   
+                                        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"><br><br>
+                                        
+                                      </div>
+                                      <p>Max Size 3mb</p>
+                                      <h5>Body</h5>
+                            
+                                      <!----------------------------editeur-->
+                                      <textarea>Next, use our Get Started docs to setup Tiny!</textarea>
+                                    </div>                <!-- Modal -->
+
+                                </div>
+                              
+                              </div>
+                            </div>
+                          </div>
+                          </i><a class="btn btn-secondary" data-bs-toggle="modal" href="#exampleModalToggle2" role="button"><i class="fa-solid fa-angles-right"></i> Details</a>
+                            
+                           <!-------------------------Fin button post-->  
+                       </td>
+
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>Post Four</td>
+                        <td>Business</td>
+                        <td>Octobre 14,2019</td>
+                        <td>
+
+                           <!-------------------------button post-->
+                          <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+                            <div class="modal-dialog modal-centered">
+                              <div class="modal-content">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <div class="bg-primary">
+                                  <p>Post Four</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="modal-footer ">
+                                        
+                                        <button type="button" class="btn btn-success "><i class="fa-solid fa-check"></i>Save changes</button>
+                                        <button type="button" class="btn btn-danger " data-bs-dismiss="modal"><i class="fa-solid fa-user-xmark"></i>Close</button>
+                                      </div>                               
+                                </div>
+                                <div class="modal-header  bg-secondary">
+                                  <h5 class="modal-title" id="exampleModalToggleLabel3">Edit Post</h5>
+                                  
+                                </div>
+                                <div class="modal-body">
+                                    <div class="modal-body">
+                                        <label for="">Titre</label><br>
+                                      <input type="text" name="" id="" class="w-100 pb-2"><br><br>
+                            
+                                      <div class="input-group mb-3">
+                                        
+                                        <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                          <option selected>Category</option>
+                                          <option value="1">Web Developpement</option>
+                                          <option value="2">Tech Gadget</option>
+                                          <option value="3">Business</option>
+                                          <option value="4">Heath & Weliness</option>
+                                        </select>
+                                      </div>
+                                      <h5>Image Upload</h5>
+                                      <!-----------------file-->
+                                      <div class="input-group">
+                                   
+                                        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"><br><br>
+                                        
+                                      </div>
+                                      <p>Max Size 3mb</p>
+                                      <h5>Body</h5>
+                            
+                                      <!----------------------------editeur-->
+                                      <textarea>Next, use our Get Started docs to setup Tiny!</textarea>
+                                    </div>                <!-- Modal -->
+
+                                </div>
+                              
+                              </div>
+                            </div>
+                          </div>
+                          </i><a class="btn btn-secondary" data-bs-toggle="modal" href="#exampleModalToggle3" role="button"><i class="fa-solid fa-angles-right"></i> Details</a>
+                            
+                           <!-------------------------Fin button post-->  
+                       </td>
+
+                      </tr>
+                      <tr class="bg-light">
+                        <th scope="row">5</th>
+                        <td>Post Five</td>
+                        <td>Web Deveopment</td>
+                        <td>Octobre 14,2019</td>
+                        <td>
+                          <!-------------------------button post-->
+                          <div class="modal fade" id="exampleModalToggle4" aria-hidden="true" aria-labelledby="exampleModalToggleLabel4" tabindex="-1">
+                            <div class="modal-dialog modal-centered">
+                              <div class="modal-content">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <div class="bg-primary">
+                                  <p>Post Five</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="modal-footer ">
+                                        
+                                        <button type="button" class="btn btn-success "><i class="fa-solid fa-check"></i>Save changes</button>
+                                        <button type="button" class="btn btn-danger " data-bs-dismiss="modal"><i class="fa-solid fa-user-xmark"></i>Close</button>
+                                      </div>                               
+                                </div>
+                                <div class="modal-header  bg-secondary">
+                                  <h5 class="modal-title" id="exampleModalToggleLabel4">Edit Post</h5>
+                                  
+                                </div>
+                                <div class="modal-body">
+                                    <div class="modal-body">
+                                        <label for="">Titre</label><br>
+                                      <input type="text" name="" id="" class="w-100 pb-2"><br><br>
+                            
+                                      <div class="input-group mb-3">
+                                        
+                                        <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                          <option selected>Category</option>
+                                          <option value="1">Web Developpement</option>
+                                          <option value="2">Tech Gadget</option>
+                                          <option value="3">Business</option>
+                                          <option value="4">Heath & Weliness</option>
+                                        </select>
+                                      </div>
+                                      <h5>Image Upload</h5>
+                                      <!-----------------file-->
+                                      <div class="input-group">
+                                   
+                                        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"><br><br>
+                                        
+                                      </div>
+                                      <p>Max Size 3mb</p>
+                                      <h5>Body</h5>
+                            
+                                      <!----------------------------editeur-->
+                                      <textarea>Next, use our Get Started docs to setup Tiny!</textarea>
+                                    </div>                <!-- Modal -->
+
+                                </div>
+                              
+                              </div>
+                            </div>
+                          </div>
+                          </i><a class="btn btn-secondary" data-bs-toggle="modal" href="#exampleModalToggle4" role="button"><i class="fa-solid fa-angles-right"></i> Details</a>
+                            
+                           <!-------------------------Fin button post-->  
+                      </td>
+
+                      </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td>Post Six</td>
+                        <td>Heath & Wellness</td>
+                        <td>Octobre 16,2019</td>
+                        <td>
+                           <!-------------------------button post-->
+                          <div class="modal fade" id="exampleModalToggle5" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                            <div class="modal-dialog modal-centered">
+                              <div class="modal-content">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <div class="bg-primary">
+                                  <p>Post Six</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="modal-footer ">
+                                        
+                                        <button type="button" class="btn btn-success "><i class="fa-solid fa-check"></i>Save changes</button>
+                                        <button type="button" class="btn btn-danger " data-bs-dismiss="modal"><i class="fa-solid fa-user-xmark"></i>Close</button>
+                                      </div>                               
+                                </div>
+                                <div class="modal-header  bg-secondary">
+                                  <h5 class="modal-title" id="exampleModalToggleLabel5">Edit Post</h5>
+                                  
+                                </div>
+                                <div class="modal-body">
+                                    <div class="modal-body">
+                                        <label for="">Titre</label><br>
+                                      <input type="text" name="" id="" class="w-100 pb-2"><br><br>
+                            
+                                      <div class="input-group mb-3">
+                                        
+                                        <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                          <option selected>Category</option>
+                                          <option value="1">Web Developpement</option>
+                                          <option value="2">Tech Gadget</option>
+                                          <option value="3">Business</option>
+                                          <option value="4">Heath & Weliness</option>
+                                        </select>
+                                      </div>
+                                      <h5>Image Upload</h5>
+                                      <!-----------------file-->
+                                      <div class="input-group">
+                                   
+                                        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"><br><br>
+                                        
+                                      </div>
+                                      <p>Max Size 3mb</p>
+                                      <h5>Body</h5>
+                            
+                                      <!----------------------------editeur-->
+                                      <textarea>Next, use our Get Started docs to setup Tiny!</textarea>
+                                    </div>                <!-- Modal -->
+
+                                </div>
+                              
+                              </div>
+                            </div>
+                          </div>
+                          </i><a class="btn btn-secondary" data-bs-toggle="modal" href="#exampleModalToggle5" role="button"><i class="fa-solid fa-angles-right"></i> Details</a>
+                            
+                           <!-------------------------Fin button post-->  
+                        </td>
+
+                      </tr>
+                    </tbody>
+                  </table>
+                          <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-start">
+                              <li class="page-item disabled">
+                                <a class="page-link">Previous</a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item"><a class="page-link" href="#">2</a></li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                              </li>
+                            </ul>
+                          </nav>
+             </div>
+            <div class="col-lg-4 col-sm-6">
+                  
+                   <div class=" mb-3 text-center bg-primary pt-2 pb-2 "><h3>Post</h3><i class="fa-solid fa-pencil fa-3x"></i><i class="fa-solid fa-6 fa-3x"></i><br><br><button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                     <a href="#"  class="text-white"> view</a>
+
+                   </button></div>
+                   <div class=" mb-3  text-center bg-success pt-2 pb-2"><h3>Categories</h3><i class="fa-solid fa-file-export fa-3x"></i><i class="fa-solid fa-4 fa-3x"></i><br><br><button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">view</button></div>
+                   <div class=" mb-3  text-center bg-warning pt-2 pb-2"><h3>Utilisateur</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-check-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                      </svg><i class="fa-solid fa-6 fa-3x"></i><br><br><button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">view</button>
+                    </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+  <!------------footer-->
+    <footer class="bg-dark text-white text-center footer mb-0 py-3 fixed-bottom">
+      <div class="container">
+        <span class="text-muted">Copyright © 2022 Admin Board/ IMMS</span>
+     
+      </div>
+    </footer>
+
+           
+                         <!--lien js bootstrap-->
+                         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+                         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+       
+</body>
+
+                  
+
+</html>
